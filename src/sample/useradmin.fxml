@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.UserManageController">
+   <children>
+      <SplitPane dividerPositions="0.3923705722070845" layoutX="9.0" layoutY="12.0" orientation="VERTICAL" prefHeight="740.0" prefWidth="690.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="233.0" prefWidth="582.0">
+               <children>
+                  <TextField fx:id="user_manage_username" layoutX="190.0" layoutY="55.0" />
+                  <PasswordField fx:id="user_manage_psw" layoutX="190.0" layoutY="98.0" />
+                  <PasswordField fx:id="user_manage_repsw" layoutX="190.0" layoutY="143.0" />
+                  <Button fx:id="user_manage_add" layoutX="447.0" layoutY="55.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="76.0" text="添加" />
+                  <Button fx:id="user_manage_update" layoutX="447.0" layoutY="98.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="76.0" text="修改" />
+                  <Button fx:id="user_manage_del" layoutX="447.0" layoutY="144.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="76.0" text="删除" />
+                  <Text layoutX="100.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="用户账号" wrappingWidth="76.30029296875" />
+                  <Text layoutX="100.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="用户密码" />
+                  <Text layoutX="100.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="确认密码" />
+                  <TextField fx:id="user_manage_type" layoutX="190.0" layoutY="189.0" />
+                  <Text layoutX="100.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="用户类型" />
+                  <Text fx:id="manage_hold_text" layoutX="190.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="202.00000405311584" />
+                  <Button fx:id="user_manage_reset" layoutX="445.0" layoutY="189.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="重置" />
+               </children></AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="584.0">
+               <children>
+                    <TableView fx:id="user_manage_table" layoutX="9.0" layoutY="14.0" prefHeight="385.0" prefWidth="672.0">
+                    <columns>
+                      <TableColumn fx:id="user_manage_table_col1" prefWidth="135.0" text="用户名称" />
+                      <TableColumn fx:id="user_manage_table_col2" minWidth="0.0" prefWidth="118.0" text="用户密码" />
+                        <TableColumn fx:id="user_manage_table_col3" minWidth="0.0" prefWidth="106.0" text="用户类型" />
+                        <TableColumn fx:id="user_manage_table_col4" minWidth="0.0" prefWidth="134.0" text="最后登录IP" />
+                        <TableColumn fx:id="user_manage_table_col5" minWidth="0.0" prefWidth="180.0" text="最后登录时间" />
+                    </columns>
+                  </TableView>
+                   <Pagination fx:id="user_manage_pagination" layoutX="9.0" layoutY="9" maxPageIndicatorCount="10" pageCount="100" prefHeight="410.0" prefWidth="700.0" />
+
+
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+      <Text layoutX="26.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="操作员信息" />
+   </children>
+</AnchorPane>
