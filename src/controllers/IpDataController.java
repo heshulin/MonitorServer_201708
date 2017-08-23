@@ -40,8 +40,28 @@ public class IpDataController {
             return null;
         }
     }
+    public boolean isExist(String ip)
+    {
+        jdbcUtil = JDBCUtil.getInstance();
+        this.connection = jdbcUtil.getConnection();
+        String sql = "select * from client where clientip  = '"+ip+"';";
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if(resultSet.next())
+            {
+                return true;
+            }else{
+                return false;
+            }
+
+        } catch (SQLException e) {
+            return true;
+        }
+    }
     public  String doUpdateIp(String ip) {
-        String sql = "update client set clientip ='" + ip + "';";
+        String sql = "insert into client(clientip) VALUES ('" + ip + "');";
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement(sql);

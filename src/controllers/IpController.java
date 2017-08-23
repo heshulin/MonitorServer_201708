@@ -2,8 +2,6 @@ package controllers;
 
 import Dao.ClientIp;
 import Dao.ClientIpBean;
-import Dao.UserBean;
-import Dao.Users;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -17,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
+import util.IpCheck;
 
 
 import java.net.URL;
@@ -76,14 +75,20 @@ public class IpController  implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 String ip = tff1.getText();
-                /*if(chick()){
+                if(!IpCheck.ipCheck(ip)){
                     t1.setText("请检查Ip的合法性");
                 }else{
-                    String res = ipDataController.doUpdateIp(ip);
-                    t1.setText(res);
-                    reset();
-                    showList();
-                }*/
+                    if(ipDataController.isExist(ip)){
+                        t1.setText("此ip已经存在");
+                    }else{
+                        reset();
+                        String res = ipDataController.doUpdateIp(ip);
+                        t1.setText(res);
+
+                        showList();
+                    }
+
+                }
             }
         });
         this.b2.setOnAction(new EventHandler<ActionEvent>() {
@@ -101,7 +106,7 @@ public class IpController  implements Initializable {
         tff1.setEditable(true);
         t1.setText("");
         tff1.setText("");
-        b2.setVisible(false);
+        b2.setVisible(true);
         b1.setVisible(true);
 
     }

@@ -367,6 +367,10 @@ public class Controller implements Initializable {
 
                         }
                     }
+                    IpDataController ipDataController = new IpDataController();
+                    if(!ipDataController.isExist(socket.getInetAddress().toString().replace("/","").replace("\\",""))){
+                        socket=null;
+                    }
                     if(socket==null){
                         continue;
                     }
