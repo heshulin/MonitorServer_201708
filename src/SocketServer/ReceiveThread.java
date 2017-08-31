@@ -42,7 +42,8 @@ public class ReceiveThread extends Thread {
                     //System.out.println("woshiindexaaaa");
                     BufferedImage bufferedImage = null;
                     try {
-                        bufferedImage = ImageIO.read(new FileInputStream("picture/stop.jpg"));
+                        this.getClass().getResource("/");
+                        bufferedImage = ImageIO.read(this.getClass().getResourceAsStream("/stop.jpg"));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -146,7 +147,8 @@ public class ReceiveThread extends Thread {
                                 System.out.println("woshiindexaaaa");
                                 BufferedImage bufferedImage = null;
                                 try {
-                                    bufferedImage = ImageIO.read(new FileInputStream("picture/stop.jpg"));
+                                    this.getClass().getResource("/");
+                                    bufferedImage = ImageIO.read(this.getClass().getResourceAsStream("/stop.jpg"));
                                 } catch (IOException e) {
                                     e.printStackTrace();
                                 }
@@ -197,7 +199,8 @@ public class ReceiveThread extends Thread {
                     System.out.println("woshiindexaaaa");
                     BufferedImage bufferedImage = null;
                     try {
-                        bufferedImage = ImageIO.read(new FileInputStream("picture/stop.jpg"));
+                        this.getClass().getResource("/");
+                        bufferedImage = ImageIO.read(this.getClass().getResourceAsStream("/stop.jpg"));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

@@ -280,7 +280,8 @@ public class Controller implements Initializable {
         BufferedImage bufferedImage = null;
         //设置默认图片
         try {
-            bufferedImage = ImageIO.read(new FileInputStream("picture/stop.jpg"));
+            this.getClass().getResource("/");
+            bufferedImage = ImageIO.read(this.getClass().getResourceAsStream("/stop.jpg"));
         } catch (IOException e) {
             e.printStackTrace();
         }
